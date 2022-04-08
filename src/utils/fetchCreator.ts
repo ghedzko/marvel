@@ -1,58 +1,72 @@
 import axios from "axios";
 
-import { API_URL } from "../constants";
+import { MARVEL_URL, MARVEL_AUTH } from "../constants";
 
 export interface fetchCreatorParams {}
 
 export default class fetchCreator implements fetchCreatorParams {
   token: string;
-    constructor() {
-    axios.defaults.baseURL = API_URL;
-    this.token= "";
+  constructor() {
+    axios.defaults.baseURL = MARVEL_URL;
+    this.token = "";
   }
 
-  static async get(url: string, params?: any) {
+  async get(url: string, params?: any) {
     try {
-      const response = await axios.get(`${API_URL}${url}`, { params });
+      const response = await axios.get(`${MARVEL_URL}${url}${MARVEL_AUTH}`, {
+        params,
+      });
       return response.data;
     } catch (error) {
-        console.error(error);
+      console.error(error);
       throw error;
     }
   }
   static async post(url: string, params?: any) {
     try {
-      const response = await axios.post(`${API_URL}${url}`, params);
+      const response = await axios.post(
+        `${MARVEL_URL}${url}${MARVEL_AUTH}`,
+        params
+      );
       return response.data;
     } catch (error) {
-        console.error(error);
+      console.error(error);
       throw error;
     }
   }
   static async put(url: string, params?: any) {
     try {
-      const response = await axios.put(`${API_URL}${url}`, params);
+      const response = await axios.put(
+        `${MARVEL_URL}${url}${MARVEL_AUTH}`,
+        params
+      );
       return response.data;
     } catch (error) {
-        console.error(error);
+      console.error(error);
       throw error;
     }
   }
-  static async patch(url: string, params?: any) {
+  async patch(url: string, params?: any) {
     try {
-      const response = await axios.patch(`${API_URL}${url}`, params);
+      const response = await axios.patch(
+        `${MARVEL_URL}${url}${MARVEL_AUTH}`,
+        params
+      );
       return response.data;
     } catch (error) {
-        console.error(error);
+      console.error(error);
       throw error;
     }
   }
-  static async delete(url: string, params?: any) {
+  async delete(url: string, params?: any) {
     try {
-      const response = await axios.delete(`${API_URL}${url}`, params);
+      const response = await axios.delete(
+        `${MARVEL_URL}${url}${MARVEL_AUTH}`,
+        params
+      );
       return response.data;
     } catch (error) {
-        console.error(error);
+      console.error(error);
       throw error;
     }
   }
