@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { fetchCharacters } from "../../services/characters";
+import { useDispatch, useSelector } from "react-redux";
+import { charactersSelector } from "../../state/selectors/characters";
 import { getCharacters } from "../../state/slices/characters";
 
 function App() {
   const dispatch = useDispatch();
-  const [characters, setCharacters] = useState<any>();
+  const fetchedCharacters = useSelector(charactersSelector);
+  const [characters, setCharacters] = useState<any>(fetchedCharacters);
 
   useEffect(() => {
     dispatch(getCharacters());
@@ -14,6 +15,10 @@ function App() {
   useEffect(() => {
     console.log({ characters });
   }, [characters]);
+
+  useEffect(() => {
+    setCharacters(fetchedCharacters);
+  }, [fetchedCharacters]);
 
   return <div className="App"></div>;
 }

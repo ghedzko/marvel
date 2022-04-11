@@ -16,7 +16,6 @@ export default class fetchCreator implements fetchCreatorParams {
       const response = await axios.get(`${MARVEL_URL}${url}${MARVEL_AUTH}`, {
         params,
       });
-      console.log({ response });
       return response.data;
     } catch (error) {
       console.error(error);

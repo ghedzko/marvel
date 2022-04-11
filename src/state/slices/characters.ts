@@ -30,7 +30,6 @@ export const charactersSlice = createSlice({
         };
       })
       .addCase(getCharacters.fulfilled, (state, action) => {
-        console.log({ action });
         return {
           ...state,
           status: "idle",
