@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { fetchCharacters } from "../../services/characters";
+import { getCharacters } from "../../state/slices/characters";
 
 function App() {
-  // const charactersFetch = fetchCharacters();
-  const [characters, setCharacters] = useState();
+  const dispatch = useDispatch();
+  const [characters, setCharacters] = useState<any>();
+
   useEffect(() => {
-    const getCharacters = async () => await fetchCharacters();
-    getCharacters().then((data) => {
-      console.log("devuelvo la data", data);
-      setCharacters(data);
-    });
+    dispatch(getCharacters());
   }, []);
 
   useEffect(() => {

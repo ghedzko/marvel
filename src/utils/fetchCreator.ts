@@ -11,11 +11,12 @@ export default class fetchCreator implements fetchCreatorParams {
     this.token = "";
   }
 
-  async get(url: string, params?: any) {
+  async get(url: string | null, params?: any) {
     try {
       const response = await axios.get(`${MARVEL_URL}${url}${MARVEL_AUTH}`, {
         params,
       });
+      console.log({ response });
       return response.data;
     } catch (error) {
       console.error(error);
