@@ -1,0 +1,7 @@
+@host=https://gateway.marvel.com:443/v1/public
+@api_key=?ts=1&apikey=ea2e1168125587b8f0edebfa36121e6c&hash=3a350f6e0f6918d9d22b82960aa6760f
+
+
+GET {{host}}/characters{{api_key}}
+Content-Type: application/json
+###
