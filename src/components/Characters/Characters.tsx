@@ -4,18 +4,18 @@ import { Character as CharacterProps } from "../../interfaces/Characters";
 import { charactersSelector } from "../../state/selectors/characters";
 import Character from "../Character/Character";
 
+import styles from "./Characters.module.scss";
+
 const Characters: FunctionComponent = () => {
   const fetchedCharacters = useSelector(charactersSelector);
   const [characters, setCharacters] =
     useState<CharacterProps[]>(fetchedCharacters);
   console.count("Characters :");
-  useLayoutEffect(
-    () => console.log({ characters }),
-    [characters, fetchedCharacters]
-  );
+  useEffect(() => {
+    setCharacters(fetchedCharacters);
+  }, [characters, fetchedCharacters]);
   return (
-    <div className="characters-container">
-      <h1>Characters</h1>
+    <div className={styles.container}>
       {characters &&
         characters.map((character: CharacterProps) => (
           <Character key={character.id} character={character} />

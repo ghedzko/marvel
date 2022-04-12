@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import CharactersScreen from "../../routes/Characters/Characters.screen";
 import { getCharacters } from "../../state/slices/characters";
 import Characters from "../Characters";
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      <Characters />
+      <CharactersScreen />
     </div>
   );
 }

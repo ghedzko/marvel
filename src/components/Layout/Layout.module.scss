@@ -1,0 +1,49 @@
+@import "../../utils/styles/variables";
+
+.login-wrapper {
+  width: 100vw;
+
+  --template-columns: 1fr;
+
+  display: grid;
+  grid-template-columns: var(--template-columns);
+
+  &--register {
+    &__left-column {
+      &__icon {
+        max-height: 300px !important;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    &--register {
+      --template-columns: 5fr 7fr;
+    }
+    --template-columns: 1fr 1fr;
+  }
+
+  &__left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 18vh 4vw;
+  }
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns:  1fr;
+  padding: 0 18px;
+
+  width: 100vw;
+  max-width: 1400px;
+
+  text-align: center;
+
+  &__sidebar {
+    width: 400px;
+  }
+}
