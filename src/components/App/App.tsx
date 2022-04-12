@@ -1,26 +1,20 @@
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { charactersSelector } from "../../state/selectors/characters";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { getCharacters } from "../../state/slices/characters";
+import Characters from "../Characters";
 
 function App() {
   const dispatch = useDispatch();
-  const fetchedCharacters = useSelector(charactersSelector);
-  const [characters, setCharacters] = useState<any>(fetchedCharacters);
 
   useEffect(() => {
     dispatch(getCharacters());
   }, []);
 
-  useEffect(() => {
-    console.log({ characters });
-  }, [characters]);
-
-  useEffect(() => {
-    setCharacters(fetchedCharacters);
-  }, [fetchedCharacters]);
-
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Characters />
+    </div>
+  );
 }
 
 export default App;

@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { State } from "../../interfaces";
 import { fetchCharacters } from "../../services/characters";
 const initialState = {
-  characters: null,
+  characters: [],
   status: "idle",
 };
 

@@ -1,9 +1,7 @@
 import { State } from "../../interfaces";
 
 export const charactersSelector = (state: State) => {
-  const {
-    characters: { characters = {} },
-  } = state || {};
+  const { characters } = state.characters;
 
   return characters;
 };

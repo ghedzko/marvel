@@ -1,8 +1,8 @@
-import { Characters } from "./Characters";
+import { Character } from "./Characters";
 
 export interface State {
   characters: {
     loading: boolean;
-    characters: Characters[] | null;
+    characters: Character[];
   };
 }
