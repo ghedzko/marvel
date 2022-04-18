@@ -1,12 +1,22 @@
 .wrapper {
   background-color: antiquewhite;
-    width: 250px;
-    height: 250px;
-  
+  border: 2px solid burlywood;
+  border-radius: 15px;
+  width: 300px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content:baseline;
     align-items: center;
-    margin:2em;
-  
-    border-radius: 5%;
+  padding :1em;
+
+
+    &__title{
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+    &__text{
+      font-size: 12px;
+      text-align: justify;
+    }
   }
