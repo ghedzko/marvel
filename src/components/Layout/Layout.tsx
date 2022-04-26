@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "../Header/Header";
 
 import style from "./Layout.module.scss";
 
@@ -33,9 +34,8 @@ const Layout: React.FC<LayoutProps> = ({
 
   return (
     <div className={style.wrapper}>
-      <div className={style.wrapper__main}>
-        <div className={className}>{children}</div>
-      </div>
+      <Header />
+      {children}
     </div>
   );
 };
