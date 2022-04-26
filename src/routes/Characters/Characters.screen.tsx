@@ -5,10 +5,8 @@ import Layout from "../../components/Layout";
 const CharactersScreen = () => {
   return (
     <Layout>
-      <div>
-        <h1>Characters</h1>
-        <Characters />
-      </div>
+      <h1>Characters</h1>
+      <Characters />
     </Layout>
   );
 };
