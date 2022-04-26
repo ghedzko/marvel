@@ -7,9 +7,10 @@ import styles from "./Character.module.scss";
 interface CharactersProps {
   character: CharacterInterface;
 }
-const Character: FunctionComponent<CharactersProps> = ({ character }) => {
+const Character: FunctionComponent<CharactersProps> = ({ character: { thumbnail: { path, extension }, ...character} }) => {
   return (
     <div className={styles.wrapper}>
+      <img src={`${path}.${extension}`} alt="{character.name}" className={styles.wrapper__image} />
       <h3 className={styles.wrapper__title}>{character.name}</h3>
       <p className={styles.wrapper__text}>{character.description}</p>
 
