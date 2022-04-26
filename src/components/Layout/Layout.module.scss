@@ -5,13 +5,6 @@
   display: grid;
   grid-template-columns:  1fr;
   padding: 18px 40px;
-  align-content: space-between;
-  justify-content: space-around;
-
-  width: 100vw;
-  // max-width: 1400px;
-
-  text-align: center;
 
   &__sidebar {
     width: 400px;
