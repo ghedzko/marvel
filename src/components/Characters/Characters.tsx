@@ -8,20 +8,21 @@ import { v4 } from "uuid";
 
 const Characters: FunctionComponent = () => {
   const fetchedCharacters = useSelector(charactersSelector);
-  const [characters, setCharacters] =
-    useState<CharacterProps[]>(fetchedCharacters);
+  const [characters, setCharacters] = useState<CharacterProps[]>([]);
   console.count("Characters");
+
   const id = v4();
   console.log({ id });
+
   useEffect(() => {
     setCharacters(fetchedCharacters);
   }, [characters, fetchedCharacters]);
+  
   return (
     <div className={styles.container}>
-      {characters &&
-        characters.map((character: CharacterProps) => (
-          <Character key={v4()} character={character} />
-        ))}
+      {characters.map((character: CharacterProps) => (
+        <Character key={v4()} character={character} />
+      ))}
     </div>
   );
 };
